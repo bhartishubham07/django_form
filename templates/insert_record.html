@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccessRecord Insertion</title>
+</head>
+<body>
+    <header style="display:flex; justify-content:right; ">
+        <a href="{% url 'insert_webpage' %}">InsertWebpage</a>
+        <a href="{% url 'insert_topic' %}">InsertTopic</a>
+    </header>
+    <center>
+        <h1>AccessRecord Insertion</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+                {{ARFO.as_p}}
+
+            <input type="submit" value="Submit Record">
+        </form>
+    </center>
+</body>
+</html>

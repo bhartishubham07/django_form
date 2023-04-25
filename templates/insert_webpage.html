@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage insertion</title>
+</head>
+<body>
+    <header style="display:flex; justify-content:right; ">
+        <a href="{% url 'insert_topic' %}">InsertTopic</a>
+        <a href="{% url 'insert_record' %}">InsertRecord</a>
+    </header>
+    <center>
+        <h1>Webpage Insertion</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+
+                {{WFO.as_p}}
+
+            <input type="submit" value="Submit Webpage">
+        </form>
+    </center>
+</body>
+</html>
